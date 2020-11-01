@@ -28,12 +28,8 @@ export const getStaticProps = async () => {
 	// Get external data from the file system, API, DB, etc.
 	const post = posts['test'];
 	// 이때 서버가 떠 있어야 정상적인 빌드가 됨(데이터 가져와서 static.json 으로 말아줌)
-	const mock = await fetch('http://localhost:3030/mock')
-		.then((data) => {
-			console.log(data.status);
-			return [200, 304].includes(data.status) ? data.json() : 'failure';
-		})
-		.catch((e) => console.log(e));
+	const res = await fetch('http://localhost:3030/mock');
+	const mock = await res.json();
 
 	return {
 		props: {

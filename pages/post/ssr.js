@@ -9,9 +9,8 @@ const SSR = ({ post }) => {
 
 export const getServerSideProps = async (context) => {
 	if (typeof window !== 'undefined') console.log('SSG client mode!');
-	const post = await fetch('http://localhost:3030/mock').then((data) =>
-		data.json()
-	);
+	const res = await fetch('http://localhost:3030/mock');
+	const post = await res.json();
 	console.log('SSR server side props hit!', post);
 
 	return {
