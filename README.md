@@ -62,6 +62,14 @@ Post.getInitialProps = ({ query }) => {
 
 ## 3. getInitialProps, getStaticPaths, getStaticProps, getServerSideProps 각각의 개념 및 차이 알아보기
 
+왜 이 친구들이 필요한가?
+
+- `build` 단계에서는 페이지를 그릴 수 없다. 따라서 빌드 단계에서 데이터가 존재할 수 있도록 사전 처리 해주는 함수들.
+- [예시](pages/post/index.js)를 보면 `post.title` 이 존재하지 않으므로 에러가 발생한다.
+- 따라서 [이 예시](pages/post/solved.js)와 같이 서버에서 값을 처리해 만들어진 돔을 내린다.
+
+요약 
+
 - `getInitialProps`: `getStaticPaths`, `getStaticProps`, `getServerSideProps` 를 합친 것과 같다.(v9.3에서 세분화 되면서 더 이상 사용을 [추천하지 않음](https://nextjs.org/docs/api-reference/data-fetching/getInitialProps))
 - `getStaticPaths`: pre-render할 동적 라우팅을 선언(getStaticProps와 함께 쓰임)
 - `getStaticProps`: 빌드 타임 때 딱 한 번만 실행되며 외부 데이터(fetch)를 JSON 으로 만들어 준다.(빌드 이후 변경 불가)
@@ -70,6 +78,27 @@ Post.getInitialProps = ({ query }) => {
 `getStaticProps`와 `getServerSideProps`의 차이는 빌드이후에도 data 변경 가능 여부이다.
 
 -> SSG(Static Generation) vs SSR(Server-side rendering)
+
+### getStaticPaths
+- [예시](pages/post/[id].js)
+- 해당 함수에 지정된 path 를 pre-rendering 해준다.
+- `fallback` 을 `true` 로 설정하면 서버에서 그때그때 내려준다(SSG)
+- `fallback` 을 `false` 로 설정하면 404 로 처리된다.
+
+### getStaticProps
+- [예시](pages/post/static.js)
+- 개발모드에선 모든 요청에 실행되지만 프로덕션 모드에선 `build` 타임에 **한 번만 실행**된다.
+- 브라우저용 JS 번들에도 포함되지 않으므로 디비 쿼리 같은 코드를 작성해도 된다.
+- 요청에 따라 페이지 내부의 값이 변경된다면 이 static 보단 아래의 SSR 이 올바르다.
+- `pages/api` 를 사용하려면 [preview 모드](https://nextjs.org/docs/advanced-features/preview-mode)로 가져와야 한다.
+- 빌드된 `fetch` 값들은 `static.json` 으로 만들어 진다.
+
+### getServerSideProps
+- [예시](pages/post/ssr.js)
+- 요청에 따라 그때그때 값을 처리해 페이지를 '그려서' 내려준다.
+- static 보단 느리지만 가장 최신의 값을 유지할 수 있다.
+
+### 추가
 
 배포되는 파일이 static, SSR, SSG 중 어디에 속하는지 알고 싶다면 build 결과를 보면 된다.
 
