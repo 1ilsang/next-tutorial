@@ -9,9 +9,9 @@ app
 	.then(() => {
 		const server = express();
 
-		server.get('/mask/:id', (req, res) => {
+		server.get('/post/solved/:id', (req, res) => {
 			console.log('hit server!', req.params.id);
-			const actualPage = '/mask';
+			const actualPage = '/post/solved';
 			const queryParas = { id: req.params.id };
 			app.render(req, res, actualPage, queryParas);
 		});

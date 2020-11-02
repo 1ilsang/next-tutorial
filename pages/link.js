@@ -14,15 +14,16 @@ const link = () => {
 						Dynamic Link: as '/mask/test' to '/mask?id=test'
 					</Link>
 					<br />
-					<Link href={`/mask?id=${id}`}>just href</Link>
+					<Link href={`/mask?id=${id}`}>Just href</Link>
 				</div>
 				<div>
 					<Link href={`/post/solved?id=${id}`} as={`/post/solved/${id}`}>
-						Dynamic Link: as '/mask/test' to '/mask?id=test'
+						Dynamic Link: as '/post/solved/test' to '/post/solved?id=test'
 					</Link>
 					<br />
-					<Link href={`/post/solved?id=${id}`}>Post href</Link>
-					<br />
+					<Link href={`/post/solved?id=${id}`}>Just href</Link>
+				</div>
+				<div>
 					<Link href={`/post/static`}>Post static href</Link>
 					<br />
 					<Link href={`/post/ssr`}>Post SSR href</Link>

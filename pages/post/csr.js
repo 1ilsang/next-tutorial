@@ -4,6 +4,7 @@ const CSR = () => {
 	const { data, error } = useSWR('http://localhost:3030/mock', (url) =>
 		fetch(url).then((data) => data.json())
 	);
+	console.log('Client side');
 
 	if (error) return <div>failed to load</div>;
 	if (!data) return <div>loading...</div>;
