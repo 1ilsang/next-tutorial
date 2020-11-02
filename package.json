@@ -6,6 +6,7 @@
     "dev": "next dev",
     "dev2": "next dev -p 3002",
     "server": "next build && nodemon server.js",
+    "server:mock": "nodemon server-mock.js",
     "build": "next build",
     "start": "next start",
     "lint": "prettier",
