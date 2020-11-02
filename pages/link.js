@@ -7,16 +7,9 @@ const link = () => {
 	return (
 		<>
 			<Layout>
+				<h1>Link Test</h1>
 				<div>
-					<h1>Link Test</h1>
-					{/* 10버전 이전엔 href="/mask/[id]" as={`/mask/${id}`} 이렇게 해주어야 했던 것이 통일 되었다. 정말 '마스크 링크'로 적용 중 */}
-					<Link href={`/mask?id=${id}`} as={`/mask/${id}`}>
-						Dynamic Link: as '/mask/test' to '/mask?id=test'
-					</Link>
-					<br />
-					<Link href={`/mask?id=${id}`}>Just href</Link>
-				</div>
-				<div>
+					{/* 10버전 이전엔 href="/post/solved/[id]" as={`/post/solved/${id}`} 이렇게 해주어야 했던 것이 통일 되었다. 정말 '마스크 링크'로 적용 중 */}
 					<Link href={`/post/solved?id=${id}`} as={`/post/solved/${id}`}>
 						Dynamic Link: as '/post/solved/test' to '/post/solved?id=test'
 					</Link>

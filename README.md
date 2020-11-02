@@ -18,23 +18,23 @@ TL;DR!
 이를 기반으로 정적 라우팅과 동적 라우팅을 구분해 처리할 수 있다.
 
 ```javascript
-<Link href={`/path`}>정적 path 이동</Link>
-<Link href="/path/[id]" as={`/path/${id}`>동적 path 이동</Link>
+<Link href="/post/solved">정적 path 이동</Link>
+<Link href="/post/solved/[id]" as={`/post/solved/${id}`}>동적 path 이동</Link>
 ```
 
 **[Next.js 10버전](https://nextjs.org/blog/next-10#automatic-resolving-of-href)부터 as 를 통한 다이나믹 링크가 href 에도 사용될 수 있도록 변경되었다.**
 
 ```javascript
-<Link href={`/path/${id}`}>동적 path 이동</Link>
+<Link href={`/post/solved/${id}`}>동적 path 이동</Link>
 ```
 
 이때 동적 라우팅의 파라미터나 URL을 숨기고 싶다면 `as` 를 사용하면 된다.
 
 ```javascript
-<Link href={`/mask?id=${id}`} as={`/mask/${id}`}>Dynamic Mask link</Link>
+<Link href="/post/solved/[id]" as={`/post/solved/${id}`}>Dynamic Mask link</Link>
 ```
 
-이 경우 새로고침을 하게 될시 제대로 된 값을 받을 수 없으므로 `Custom server` 를 만들어 주어야 한다.
+이 경우 새로고침을 하게 될시 제대로 된 값을 받을 수 없으므로 `Custom server` 를 만들어 주어야 한다.([예시](server.js))
 
 > ["커스텀 서버는 서버리스 기능 및 자동 정적 최적화 와 같은 중요한 성능 최적화를 제거한다"](https://nextjs.org/docs/advanced-features/custom-server)
 

@@ -1,8 +1,12 @@
 import posts from '../posts.json';
+import { useRouter } from 'next/router';
 
 const Post = ({ post }) => {
+	const router = useRouter();
+
 	return (
 		<>
+			<h2>QueryId: {router.query.id}</h2>
 			<h1>{post.title}</h1>
 			<p>{post.content}</p>
 		</>
