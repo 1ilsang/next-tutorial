@@ -5,6 +5,8 @@ TL;DR!
 2. 서버모드 vs 클라이언트모드
 3. `getInitialProps`, `getStaticPaths`, `getStaticProps`, `getServerSideProps` 각각의 개념 및 차이 알아보기
 
+<br/>
+
 ## 1. 정적 라우팅 vs 동적 라우팅(with Link tag)
 
 <img src=".readme/assets/path.png" width="20%" />
@@ -36,6 +38,8 @@ TL;DR!
 
 > ["커스텀 서버는 서버리스 기능 및 자동 정적 최적화 와 같은 중요한 성능 최적화를 제거한다"](https://nextjs.org/docs/advanced-features/custom-server)
 
+<br/>
+
 ## 2. 서버모드 vs 클라이언트모드
 
 ```javascript
@@ -54,7 +58,9 @@ Post.getInitialProps = ({ query }) => {
 
 즉 해당 `js` 파일을 '서버'에서 처리하는지 '클라이언트'에서 처리하는지에 따라 모드가 달라진다.
 
-## 3. `getInitialProps`, `getStaticPaths`, `getStaticProps`, `getServerSideProps` 각각의 개념 및 차이 알아보기
+<br/>
+
+## 3. getInitialProps, getStaticPaths, getStaticProps, getServerSideProps 각각의 개념 및 차이 알아보기
 
 - `getInitialProps`: `getStaticPaths`, `getStaticProps`, `getServerSideProps` 를 합친 것과 같다.(v9.3에서 세분화 되면서 더 이상 사용을 [추천하지 않음](https://nextjs.org/docs/api-reference/data-fetching/getInitialProps))
 - `getStaticPaths`: pre-render할 동적 라우팅을 선언(getStaticProps와 함께 쓰임)
