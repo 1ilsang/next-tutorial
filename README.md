@@ -54,7 +54,13 @@ Post.getInitialProps = ({ query }) => {
 };
 ```
 
-이후 알아볼 `getInitialProps` 의 예를 보자면, URL 을 통해 서버에 요청을 날리게 될 경우 `Server mode`로 동작해 브라우저에 `server mode` 로그가 찍히며 `Link` 태그를 통해 `Client mode`로 접근할 경우 `client mode` 로그가 찍힌다.
+- [예시](pages/post/solved.js)
+
+이후 알아볼 `getInitialProps` 의 예로 보자면
+
+URL 을 통해 서버에 요청을 날리게 될 경우 `Server mode`로 동작해 브라우저에 `server mode` 로그가 찍히며 
+
+`Link` 태그를 통해 `Client mode`로 접근할 경우 `client mode` 로그가 찍힌다.
 
 즉 해당 `js` 파일을 '서버'에서 처리하는지 '클라이언트'에서 처리하는지에 따라 모드가 달라진다.
 
