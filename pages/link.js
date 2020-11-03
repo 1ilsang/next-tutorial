@@ -20,6 +20,7 @@ const link = () => {
 				</div>
 				<div>
 					<Link href={`/post/static`}>Post static href</Link>
+					<br />
 					<Link href={`/post/static2`}>Post static2 href</Link>
 					<br />
 					<Link href={`/post/ssr`}>Post SSR href</Link>
