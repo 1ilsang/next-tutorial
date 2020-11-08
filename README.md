@@ -98,7 +98,6 @@ URL 을 통해 서버에 요청을 날리게 될 경우 `Server mode`로 동작�
 - 개발모드에선 모든 요청에 실행되지만 프로덕션 모드에선 `build` 타임에 **한 번만 실행**된다.
 - 브라우저용 JS 번들에도 포함되지 않으므로 디비 쿼리 같은 코드를 작성해도 된다.
 - 요청에 따라 페이지 내부의 값이 변경된다면 이 static 보단 아래의 SSR 이 올바르다.
-- `pages/api` 를 사용하려면 [preview 모드](https://nextjs.org/docs/advanced-features/preview-mode)로 가져와야 한다.
 - 빌드된 `fetch` 값들은 `fileName.json` 으로 만들어 진다.
 
 ### getServerSideProps
