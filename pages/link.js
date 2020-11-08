@@ -14,10 +14,14 @@ const link = () => {
 						Dynamic Link: as '/post/solved/test' to '/post/solved?id=test'
 					</Link>
 					<br />
-					<Link href={`/post/solved?id=${id}`}>Just href</Link>
+					<Link href={`/post/solved?id=${id}`}>Dynamic href</Link>
+					<br />
+					<a href={`/post/solved?id=${id}`}>Just A href</a>
 				</div>
 				<div>
 					<Link href={`/post/static`}>Post static href</Link>
+					<br />
+					<Link href={`/post/static2`}>Post static2 href</Link>
 					<br />
 					<Link href={`/post/ssr`}>Post SSR href</Link>
 					<br />
