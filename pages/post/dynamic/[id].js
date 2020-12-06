@@ -5,7 +5,7 @@ const Post = ({ id }) => {
 
 	if (isFallback) return <div>Loading...</div>;
 
-	return <div>{id}</div>;
+	return <div>POST/[id]: {id}</div>;
 };
 
 // 대표적인 사용처: 블로그 등에서 md 파일 추출해 url 만들어 줄 때
@@ -22,8 +22,13 @@ export const getStaticPaths = () => {
 
 export const getStaticProps = (context) => {
 	console.log('/post/[id] context:', context);
+	// if (!['100', '101'].includes(context.params.id)) {
+	// 	return {
+	// 		notFound: false,
+	// 	};
+	// }
 	return {
-		props: { id: context.params.id },
+		props: { id: context.params.id | null },
 	};
 };
 

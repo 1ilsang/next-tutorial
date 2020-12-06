@@ -19,7 +19,6 @@ const StaticProp = ({ post, mock }) => {
 // 또한 pages 밑의 요소에서만 가능하다! 이유 중 하나는 페이지가 렌더링되기 전에 React가 필요한 모든 데이터를 가져야하기 때문
 // 그러므로 정적생산은 요청이 달라져야 한다면 좋은 방식이 아니다. -> SSR 로 변경하셈!
 // getStaticProps 와 getServerSideProps 는 동시에 사용할 수 없다.
-// pages/api 데이터를 가져와서도 안됨! (preview 모드로 가져와도 된다. https://nextjs.org/docs/advanced-features/preview-mode)
 export const getStaticProps = async () => {
 	// 오직 서버 측에서만 실행된다.
 	if (typeof window !== 'undefined') {
