@@ -9,7 +9,19 @@ const SSR = ({ post, postApi }) => {
 };
 
 export const getServerSideProps = async (context) => {
-	console.log('SSR server side props hit!');
+	const {
+		req,
+		res,
+		params,
+		query,
+		preview,
+		previewData,
+		resolvedUrl,
+		locale,
+		locales,
+		defaultLocale,
+	} = context;
+	console.log('SSR server side props hit!', resolvedUrl, query, locale);
 
 	if (typeof window !== 'undefined') console.log('SSG client mode!');
 	const [mockRes, postApiRes] = await Promise.all([
