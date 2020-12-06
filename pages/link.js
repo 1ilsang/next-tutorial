@@ -23,6 +23,8 @@ const link = () => {
 					<br />
 					<Link href={`/post/static2`}>Post static2 href</Link>
 					<br />
+					<Link href={`/post/post-api`}>Post-api static href</Link>
+					<br />
 					<Link href={`/post/ssr`}>Post SSR href</Link>
 					<br />
 					<Link href={`/post/csr`}>Post CSR href</Link>

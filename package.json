@@ -1,32 +1,34 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "dev2": "next dev -p 3002",
-    "server": "next build && nodemon server.js",
-    "server:mock": "nodemon server-mock.js",
-    "build": "next build",
-    "start": "next start",
-    "lint": "prettier",
-    "analyze": "cross-env ANALYZE=true next build",
-    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
-    "analyze:client": "cross-env BUNDLE_ANALYZE=browser next build"
-  },
-  "dependencies": {
-    "eslint": "^7.12.1",
-    "express": "^4.17.1",
-    "moment": "^2.29.1",
-    "next": "10.0.0",
-    "nodemon": "^2.0.6",
-    "prettier": "^2.1.2",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "swr": "^0.3.8"
-  },
-  "devDependencies": {
-    "@next/bundle-analyzer": "^10.0.0",
-    "cross-env": "^7.0.2"
-  }
+	"name": "my-app",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"dev2": "next dev -p 3002",
+		"server": "del .next && next build && nodemon --watch server.js",
+		"mock": "nodemon server-mock.js",
+		"export": "next export",
+		"build": "next build",
+		"start": "next start",
+		"lint": "prettier",
+		"analyze": "cross-env ANALYZE=true next build",
+		"analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+		"analyze:client": "cross-env BUNDLE_ANALYZE=browser next build"
+	},
+	"dependencies": {
+		"del-cli": "^3.0.1",
+		"eslint": "^7.12.1",
+		"express": "^4.17.1",
+		"moment": "^2.29.1",
+		"next": "10.0.0",
+		"nodemon": "^2.0.6",
+		"prettier": "^2.1.2",
+		"react": "17.0.1",
+		"react-dom": "17.0.1",
+		"swr": "^0.3.8"
+	},
+	"devDependencies": {
+		"@next/bundle-analyzer": "^10.0.0",
+		"cross-env": "^7.0.2"
+	}
 }
