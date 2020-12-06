@@ -18,7 +18,7 @@ export const getStaticPaths = () => {
 	const paths = [{ params: { name: 'user', id: '100' } }]; // 지정된 경로만 pre렌더링.
 	return {
 		paths,
-		fallback: true, // true 면 다른 dynamic path 도 허용 false 면 404
+		// fallback: true, // true 면 다른 dynamic path 도 허용 false 면 404
 		fallback: 'blocking', // true 면 다른 dynamic path 도 허용 false 면 404
 	};
 };
