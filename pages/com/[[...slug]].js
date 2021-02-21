@@ -1,6 +1,8 @@
 const com = ({ slug }) => {
 	if (!Array.isArray(slug)) return <h1>com</h1>;
 
+	console.log('Slug:', slug);
+
 	return (
 		<>
 			{slug.map((e, i) => (
@@ -15,7 +17,8 @@ const com = ({ slug }) => {
 export const getStaticPaths = () => {
 	const paths = [
 		{ params: { name: 'user', slug: ['100', '101'] } },
-		{ params: { name: 'user', slug: [] } },
+		// TODO: Exception issue - throw slug length is 0
+		// { params: { name: 'user', slug: [] } },
 	];
 	return {
 		paths,

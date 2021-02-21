@@ -28,6 +28,8 @@ const link = () => {
 					<Link href={`/post/ssr`}>Post SSR href</Link>
 					<br />
 					<Link href={`/post/csr`}>Post CSR href</Link>
+					<br />
+					<Link href={`/post/revalidate`}>revalidate JSON</Link>
 				</div>
 			</Layout>
 		</>
