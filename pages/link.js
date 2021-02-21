@@ -34,4 +34,11 @@ const link = () => {
 	);
 };
 
+// pages/link.js
+export const getServerSideProps = (ctx) => {
+	return {
+		props: { link: 'hit!' },
+	};
+};
+
 export default link;

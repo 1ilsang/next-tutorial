@@ -5,4 +5,12 @@ function MyApp({ Component, pageProps }) {
 	return <Component {...pageProps} />;
 }
 
+// _app.js
+MyApp.getInitialProps = ({ ctx }) => {
+	const userAgent = ctx.req ? ctx.req.headers['user-agent'] : 'SERVER';
+	return {
+		userAgent,
+	};
+};
+
 export default MyApp;
